@@ -1,0 +1,828 @@
+/********** GENERAL **********/
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--typography-gray-200);
+  background-color: #F5EEE6;
+}
+
+
+.wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/************** TYPOGRAPHY ****************/
+
+body, span, div, li, th, td {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 300;
+  color: var(--typography-gray-200);
+  margin: 0;
+  font-size: 16px;
+}
+
+p {
+  font-family: var(--font-paragraph), serif;
+  font-size: 16px;
+  line-height: 34px;
+  font-weight: 300;
+  letter-spacing: 0px;
+  margin-bottom: 24px;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--typography-green-light);
+  transition: color 0.3s ease;
+}
+
+
+a:hover {
+  cursor: pointer;
+  background-clip: text;
+  color: transparent;
+}
+
+em, i {
+  font-style: italic;
+}
+
+
+b, .t-bold {
+  font-weight: 700;
+}
+
+h1, .hero h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), sans-serif;
+}
+
+h1, h1.hero, .display-xxl {
+  font-family: var(--font-paragraph), sans-serif;
+  font-size: 55px;
+  line-height: 63px;
+  font-weight: 700;
+  color: #374351;
+  margin-left: -6px;
+}
+
+
+h2, h3, h4, h5, h6, .display-md {  
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: #237476;
+  text-transform: uppercase;
+}
+
+
+.body-large {
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.body-medium, .body-medium-semibold {
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.body-medium-semibold {
+  font-weight: 600;
+}
+
+.body-small {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.t-regular {
+  font-weight: 400;
+}
+
+.t-bold {
+  font-weight: 900;
+}
+
+.t-gray-200 {
+  color: var(--typography-gray-200);
+}
+
+.t-gray-700 {
+  color: var(--typography-gray-700);
+}
+
+.t-white {
+  color: var(--typography-white);
+}
+
+.t-green-light {
+  color: var(--typography-green-light);
+}
+
+.t-green-dark {
+color: var(--typography-green-dark);
+}
+
+
+
+/************** BUTTONS ****************/
+
+.btn {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  gap: var(--spacing-xxs);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  padding: 8px 0;
+  font-weight: 700;
+}
+
+.btn > .svg-button {
+  fill: var(--typography-green-light); /* default color of the button */
+  width: 24.96px;
+  height: 14.4px;
+  display: flex;
+  margin-top: 4px;
+  opacity: 1;
+  transition: color 0.3s ease;
+  transform: translateX(0); /* Initial postion of the arrow */
+  transition: transform 0.2s ease;
+}
+
+
+.btn:hover > .svg-button {
+  opacity: 0.7;
+  transform: translateX(2px) translateY(-2px); /* Pushes arrow to the right */
+}
+
+
+/* these properties sets the arrow to the left */
+.btn-arrow-left {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.btn-arrow-left > .svg-button {
+  transform: scaleX(-1);
+}
+
+.btn-arrow-left:hover > .svg-button {
+  transform: translateX(-2px) scaleX(-1);
+}
+
+
+
+
+/*************** gray button properties ************************/
+
+.btn-gray-200 {
+  color: var(--typography-gray-200);
+  transition: color 0.3s ease;
+}
+
+.btn-gray-200:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.btn-gray-200 > .svg-button { /* applies gray color to the arrow */
+  fill: var(--typography-gray-200);
+  opacity: 1;
+  width: 9.6px;
+  height: 9.6px;
+  margin-bottom: 4px;
+}
+
+
+
+/********** HOME HEADER **********/
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
+  min-height: 600px;
+}
+
+.home-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.home-logo-link {
+  position: relative;
+}
+
+
+.home-logo-svg {
+  display: inline-block;
+  position: relative;
+  width: 171px;
+  height: 24px;
+}
+
+
+.home-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  justify-content: space-between;
+  gap: 72px;
+  padding: 0 32px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero > em {
+  color: #58A399;
+}
+
+
+.hero-picture {
+  width: 430px;
+  height: 490px;
+  margin-right: 16px;
+  background: linear-gradient(#B2DAA8 0%, #58A399 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 16px;
+
+ 
+}
+
+.hero-picture::before {
+  content: "";
+  display: block;
+  width: 430px;
+  height: 490px;
+  background-image: url(../../public/images/cinthia-picture.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 16px;
+  margin-top: 16px;
+  border-radius: 16px;
+}
+
+.home-nav {
+  display: flex;
+  gap: var(--spacing-xxl);
+  justify-content: flex-start;
+  position: relative;
+}
+
+/************** DIALOG HEADER / FOOTER ***************/
+
+#dialog-header[open], #dialog-footer[open]  {
+  position: absolute;
+  background-color: #B0D9A8;
+  padding: 8px 24px;
+  animation: myFadeIn 0.6s ease forwards;
+}
+
+@keyframes myFadeIn{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes myFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#dialog-header[open] {
+  top: 42px;
+  right: 50px;
+}
+
+#dialog-footer[open] {
+  top: 42px;
+  right: 0;
+}
+
+
+#dialog-header[open] > span, #dialog-footer[open] > span {
+  vertical-align: middle;
+  margin-right: 16px;
+  user-select: all;
+}
+
+#dialog-header[open] > span::selection, #dialog-footer[open] > span::selection {
+  background: #E98C7F; /* Cor de fundo */
+  color: white; /* Cor do texto */
+}
+
+.close-header, .close-footer {
+  vertical-align: middle;
+}
+
+
+
+/************** GENERAL SECTION TITLE ***************/
+
+.text-bg {
+  background-color: #F5EEE6;
+  display: inline-block;
+  padding: 0 24px;
+  margin: 0 0 48px -24px;
+  
+}
+
+.home-section {
+  margin-bottom: 88px;
+  position: relative;
+}
+
+.home-section::before {
+  content: "";
+  width: 100%;
+  height: 0.6px;
+  background-color: #A8CD9F;
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+/********** ABOUT ME **********/
+
+
+.about-me-content {
+  column-count: 2;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.about-me-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0 12px 0 0;
+  text-transform: uppercase;
+  color: #222;
+  font-size: 14.8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.8em;
+}
+
+.tag > .divider {
+  margin: 8px;
+  font-weight: 900;
+  color: #58A399;
+}
+
+
+.tag::after {
+  content: "//";
+  letter-spacing: -0.1px;
+  font-weight: 700;
+  margin-left: 12px;
+  color: #58A399;
+}
+
+.tag:last-child::after {
+  display: none;
+}
+
+
+/********** MY PROJECTS **********/
+
+.project-card {
+  display: grid;
+  grid-template-columns: 128px auto;
+  gap: 24px;
+  align-items: center;
+  cursor: not-allowed;
+  border-radius: 16px;
+}
+
+.project-image {
+  width: 128px;
+  height: 96px;
+  background-image: url(../../public/images/project-mypet.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 16px;
+  background-size: 156%;
+  background-position: -49px -14px;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+/********** INFO **********/
+
+
+.info-table {
+  width: 100%;
+}
+
+.info-table colgroup col:first-child {
+  width: 25%;
+}
+
+.info-table > tbody > tr {
+  padding: 64px;
+  border-bottom: 0.6px solid #A8CD9F;
+}
+
+.info-table > tbody > tr:last-child {
+  border: none;
+}
+
+.info-table > tbody > tr > td {
+  padding: 24px 0;
+}
+
+.info-table > tbody > tr > td:first-child {
+  padding-right: 16px;
+}
+
+.info-table-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-table-title {
+  font-weight: 900;
+}
+
+
+
+
+/***************** CONTENT HEADER *********************/
+
+.content-header {
+  background-color: #77F082;
+  position: relative;
+}
+
+.content-header:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  background-color: #FFFFFF;
+  bottom: 0;
+
+}
+
+/********** FOOTER **********/
+
+.footer {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: var(--spacing-xxxxl) 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+
+
+.footer > .home-nav {
+  justify-content: flex-end;
+}
+
+.footer > span {
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+/********************************************* MEDIA QUERIES ************************************/
+
+
+/********* Large devices (laptops/desktops, 992px - 1199px) *********/
+@media only screen and (max-width: 1199px) {
+
+
+
+}
+
+
+/********* Large devices (laptops/desktops, 768px - 991px) *********/
+@media only screen and (max-width: 991px) {
+
+h1, h1.hero, .display-xxl {
+  font-size: 52px;
+  line-height: 60px;
+}
+
+.home-header {
+  height: 85vh;
+}
+
+.home-hero {
+  flex-direction: column;
+  gap: 48px;
+}
+
+
+.hero-picture, .hero-picture::before {
+  width: 250px;
+  height: 250px;
+  margin-right: 8px;
+}
+
+.hero-picture::before {
+  width: 250px;
+  height: 250px;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  order: 2;
+}
+
+.hero-content:before {
+  position: static;
+  display: block;
+  width: 140px;
+  height: 140px;
+  background-size: 140px;
+  margin-bottom: 8px;
+}
+
+h1.hero {
+  text-align: center;
+}
+
+.break-line-1 {
+  display: none;
+}
+
+.hero-content > span {
+  text-align: center;
+}
+
+.home-nav {
+  width: 100%;
+  justify-content: center;
+}
+
+#dialog-header[open], #dialog-footer[open] {
+  top: 42px;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+
+#dialog-header[open] > span, #dialog-footer[open] > span {
+  user-select: auto;
+}
+
+
+/********** HOME PROJECT CARDS **********/
+
+.featured-projects {
+  gap: 16px;
+  padding: 0 16px;
+}
+
+/*project card original*/
+
+
+/************** FOOTER **************/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer > .home-nav {
+  margin-top: 16px;
+  justify-content: center;
+
+}
+
+.footer > span {
+  margin-top: 16px;
+}
+
+
+
+}
+
+
+/********** Medium devices (landscape tablets, 480px - 767px) **********/
+
+@media only screen and (max-width: 767px) {
+
+
+  .wrapper {
+    padding: 0 16px;
+  }
+
+
+
+ /********** TYPOGRAPHY **********/ 
+
+  body, span, div, li, th, td {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 300;
+    color: var(--typography-gray-200);
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+  }
+  
+  p {
+    font-family: var(--font-paragraph), serif;
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+  
+  
+  h1, .display-xxl {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+  }
+  
+  h1.hero, .display-xxxl {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  
+  h2, .display-xl { 
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+  }
+  
+  h3, h4, h5, h6, .display-md {  
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+  }
+  
+  
+  .body-large, .body-medium, .body-medium-semibold, .body-small {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+
+/************** GENERAL HEADER **************/
+
+.home-hero {
+  padding: 0 16px;
+  gap: 32px;
+}
+
+.home-logo-container {
+  margin-bottom: 0;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 0;
+}
+
+.home-logo-svg {
+  width: 128px;
+  height: 18px;
+}
+
+.hero-picture, .hero-picture::before {
+  width: 144px;
+  height: 144px;
+  margin-left: 4px;
+  margin-top: 4px;
+}
+
+.hero-content {
+  gap: 16px;
+}
+
+.home-nav {
+  gap: 32px;
+  margin-top: 16px;
+}
+
+
+/************** ABOUT ME **************/
+
+.about-me-content {
+  column-count: 1;
+}
+
+/************** ABOUT ME **************/
+
+.footer {
+  padding: 16px 16px 48px 16px;
+}
+
+
+
+}
+
+/********** Small devices (portrait tablets and large phones, 0 - 480px) **********/
+@media only screen and (max-width: 480px) {
+
+
+.section-title {
+  text-align: center;
+}
+ 
+.text-bg {
+  margin: 0 0 24px 0;
+}
+
+.home-section {
+  margin-bottom: 64px;
+}
+
+/******** ABOUT ME ***********/
+
+.about-me-content {
+  margin-bottom: 0;
+}
+
+/******** MY PROJECTS ***********/
+
+.project-card {
+  grid-template-columns: 1fr;
+}
+
+.project-image {
+  width: 100%;
+  height: 156px;
+  background-size: 140%;
+  background-position: -120px -102px;
+}
+
+
+/****** TABLE FORMATION / PROFESSIONAL EXPERIENCE ***************/
+
+.info-table > tbody > tr {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-table > tbody > tr > td {
+  padding: 0;
+}
+
+.info-table > tbody > tr > td:first-child {
+  padding: 0 0 4px 0;
+}
+
+}
+
