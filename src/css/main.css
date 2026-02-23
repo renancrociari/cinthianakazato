@@ -279,7 +279,7 @@ color: var(--typography-green-dark);
   display: block;
   width: 430px;
   height: 490px;
-  background-image: url(../../public/images/cinthia-picture.jpg);
+  background-image: url(/images/cinthia-picture.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: 16px;
@@ -435,7 +435,7 @@ color: var(--typography-green-dark);
 .project-image {
   width: 128px;
   height: 96px;
-  background-image: url(../../public/images/project-mypet.png);
+  background-image: url(/images/project-mypet.png);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 16px;
